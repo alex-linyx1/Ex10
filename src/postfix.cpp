@@ -3,7 +3,7 @@
 #include"MyStack.h"
 #include"postfix.h"
 #include<string>
-
+int change(char symb);
 std::string infix2postfix(std::string str) {
     std::string str_;
     MyStack<char> stack(str.size());
