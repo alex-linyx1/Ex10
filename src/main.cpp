@@ -1,9 +1,6 @@
-// Copyright 2020 A.SHT
-#include <iostream>
-#include <string>
-
-#include "postfix.h"
+// Copyright 2021 Alexey Tatsenko
+#include<iostream>
 
 int main() {
-  return 0;
+    return 0;
 }

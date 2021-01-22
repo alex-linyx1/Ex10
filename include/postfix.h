@@ -1,8 +1,5 @@
-// Copyright 2020 A.SHT
-#ifndef INCLUDE_POSTFIX_H_
-#define INCLUDE_POSTFIX_H_
+// Copyright 2021 Alexey Tatsenko
+#pragma once
+#include<iostream>
 #include <string>
-
-std::string infix2postfix(std::string infix);
-
-#endif  // INCLUDE_POSTFIX_H_
+std::string infix2postfix(std::string x);
