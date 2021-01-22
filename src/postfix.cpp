@@ -1,8 +1,9 @@
 // Copyright 2021 Alexey Tatsenko
 #include<iostream>
+#include<string>
 #include"MyStack.h"
 #include"postfix.h"
-#include<string>
+
 int change(char symb);
 std::string infix2postfix(std::string str) {
     std::string str_;
@@ -16,9 +17,8 @@ std::string infix2postfix(std::string str) {
             if ((str[i]) !=  '.' && (str[i + 1]) != '.') str_ += ' ';
             continue;
         }
-
-        if (str[i] == '(' || change(str[i]) > change(stack.get()) || stack.isEmpty()) {
-
+        int x =  change(stack.get());
+        if (str[i] == '(' || change(str[i]) > x || stack.isEmpty()) {
             stack.push(str[i]);
             continue;
         }
@@ -31,7 +31,6 @@ std::string infix2postfix(std::string str) {
         }
 
         if (change(str[i]) == 1) {
-
             while (stack.get() != '(') {
                 str_ += stack.pop();
                 str_ += ' ';
@@ -42,12 +41,10 @@ std::string infix2postfix(std::string str) {
     }
 
     if (stack.isEmpty() == 0) {
-
         while (stack.isEmpty() != 1) {
             str_ += stack.pop();
             str_ += ' ';
         }
-
     }
     str_.resize(str_.size() - 1);
 
