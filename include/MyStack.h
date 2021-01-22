@@ -3,12 +3,12 @@
 #include<iostream>
 template <class T>
 class MyStack {
-private:
-    T* array;
+ private:
+    T *array;
     int pos;
     int size;
 
-public:
+ public:
     explicit MyStack(int n) {
         pos = -1;
         size = n;
@@ -27,8 +27,8 @@ public:
     }
     T pop() {
         T kr = array[pos];
-        T* mas1 = new T[size];
-        for (int i = 0; i < pos; i++) {
+        T * mas1 = new T[size];
+        for (int i = 0; i < pos;  i++) {
             mas1[i] = array[i];
         }
         pos = pos - 1;
@@ -40,16 +40,14 @@ public:
         if (pos == -1) {
             array[0] = n;
             pos = 0;
-        }
-        else if (pos == size - 1) {
+        } else if (pos == size - 1) {
             std::cout << "error";
-        }
-        else {
+        } else {
             pos++;
             array[pos] = n;
             /* for (int i = 0; i < size; i++) std::cout << array[i] << ' ';
             std::cout << std::endl; */
-        }
+           }
     }
 
     bool isFull() const {
